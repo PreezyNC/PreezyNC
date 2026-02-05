@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyank "Preezy" Patel — Retail Media & Ad Ops</title>
+<meta name="description" content="Retail media account manager and ad ops professional. Managed $2.5M+ in annual ad revenue across Amazon, Walmart Connect, and Roundel. Let's connect.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#09090b;--bg2:#111113;--bg3:#18181b;
+--text:#f0f0f0;--dim:#94949e;--faint:#52525b;
+--lime:#b8ff57;--purple:#c084fc;--coral:#ff6b6b;
+--border:#27272a;
+--display:'Outfit',sans-serif;
+--mono:'Space Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--display);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--lime);color:var(--bg)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--faint);border-radius:3px}
+
+/* noise */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
+nav.scrolled{background:rgba(9,9,11,.93);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:1rem 2.5rem}
+.nav-mark{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--lime);font-weight:700}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--lime)}
+.nav-links .cta{background:var(--lime);color:var(--bg);padding:.5rem 1.1rem;border-radius:100px;font-weight:700;transition:all .3s}
+.nav-links .cta:hover{transform:translateY(-1px);box-shadow:0 4px 24px rgba(184,255,87,.25)}
+.burger{display:none;background:0;border:0;cursor:pointer;padding:.5rem;z-index:101}
+.burger span{display:block;width:20px;height:2px;background:var(--text);margin:4px 0;transition:.3s}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 2.5rem 4rem;position:relative;overflow:hidden}
+.hero-glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(100px)}
+.hero-glow.g1{width:500px;height:500px;top:-10%;right:-5%;background:rgba(184,255,87,.05)}
+.hero-glow.g2{width:350px;height:350px;bottom:5%;left:-8%;background:rgba(192,132,252,.04)}
+.hero-glow.g3{width:250px;height:250px;top:40%;left:30%;background:rgba(255,107,107,.03)}
+
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:1.8rem;opacity:0;animation:up .7s ease forwards}
+.hero-eyebrow::before{content:'';width:20px;height:1px;background:var(--lime)}
+
+.hero h1{font-size:clamp(2.8rem,7.5vw,6.5rem);font-weight:900;line-height:.92;letter-spacing:-.035em;margin-bottom:1.5rem;opacity:0;animation:up .7s ease .12s forwards}
+.hero h1 .row{display:block}
+.hero h1 .pop{color:var(--lime);position:relative;display:inline-block}
+.hero h1 .pop::after{content:'';position:absolute;bottom:.08em;left:0;width:100%;height:3px;background:var(--lime);opacity:.35;border-radius:2px}
+
+.hero-blurb{font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--dim);max-width:520px;line-height:1.75;font-weight:300;margin-bottom:2.8rem;opacity:0;animation:up .7s ease .24s forwards}
+
+.hero-metrics{display:flex;gap:2.8rem;flex-wrap:wrap;opacity:0;animation:up .7s ease .36s forwards}
+.metric{padding-left:1rem;border-left:3px solid var(--border)}
+.metric:nth-child(1){border-color:var(--lime)}
+.metric:nth-child(2){border-color:var(--purple)}
+.metric:nth-child(3){border-color:var(--coral)}
+.metric:nth-child(4){border-color:var(--lime)}
+.metric strong{display:block;font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+.metric span{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;opacity:0;animation:up .7s ease .5s forwards}
+.hero-scroll span{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.hero-scroll i{width:1px;height:36px;background:linear-gradient(var(--faint),transparent);animation:pulse 2s ease-in-out infinite}
+
+/* ═══ SECTIONS ═══ */
+section{padding:5.5rem 2.5rem}
+.wrap{max-width:1100px;margin:0 auto}
+.label{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:1.5rem}
+.label::before{content:'';width:16px;height:1px;background:var(--faint)}
+.stitle{font-size:clamp(1.8rem,3.6vw,2.8rem);font-weight:800;letter-spacing:-.025em;margin-bottom:.5rem}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:all .65s cubic-bezier(.22,.61,.36,1)}
+.rv.vis{opacity:1;transform:translateY(0)}
+
+/* ═══ ABOUT ═══ */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:1.8rem;align-items:start}
+.about-prose p{color:var(--dim);font-size:.98rem;line-height:1.85;margin-bottom:1.3rem;font-weight:300}
+.about-prose .wt{color:var(--text);font-weight:500}
+.about-prose .lm{color:var(--lime)}
+
+.trait-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:2.2rem;position:relative;overflow:hidden}
+.trait-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--lime),var(--purple),var(--coral))}
+.trait-card h3{font-family:var(--mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);margin-bottom:1.3rem}
+.trait{display:flex;align-items:baseline;gap:.8rem;padding:.7rem 0;border-bottom:1px solid var(--border)}
+.trait:last-child{border:0}
+.trait-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:.35rem}
+.trait:nth-child(1) .trait-dot{background:var(--lime)}
+.trait:nth-child(2) .trait-dot{background:var(--purple)}
+.trait:nth-child(3) .trait-dot{background:var(--coral)}
+.trait:nth-child(4) .trait-dot{background:var(--lime)}
+.trait:nth-child(5) .trait-dot{background:var(--purple)}
+.trait p{font-size:.85rem;color:var(--dim);line-height:1.55}
+.trait strong{color:var(--text);font-weight:600}
+
+/* ═══ SKILLS ═══ */
+.skill-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:.8rem;margin:1.6rem 0 2.5rem}
+.sk{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.4rem;transition:all .3s;position:relative;overflow:hidden}
+.sk:hover{border-color:var(--lime);transform:translateY(-2px)}
+.sk::after{content:'';position:absolute;bottom:0;left:0;right:0;height:0;background:linear-gradient(to top,rgba(184,255,87,.03),transparent);transition:height .3s}
+.sk:hover::after{height:100%}
+.sk-icon{font-size:1.4rem;margin-bottom:.5rem}
+.sk-name{font-size:.82rem;font-weight:600}
+.sk-sub{font-size:.65rem;color:var(--faint);font-family:var(--mono);letter-spacing:.04em}
+
+.cat{margin-bottom:2rem}
+.cat-label{font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.7rem;display:flex;align-items:center;gap:.6rem}
+.cat-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tg{padding:.38rem .85rem;border:1px solid var(--border);border-radius:100px;font-size:.72rem;color:var(--dim);transition:all .3s;cursor:default}
+.tg:hover{border-color:var(--lime);color:var(--lime)}
+.tg.ft{border-color:rgba(184,255,87,.3);color:var(--lime);background:rgba(184,255,87,.04)}
+
+/* ═══ EXPERIENCE ═══ */
+.tl{margin-top:1.8rem;position:relative;padding-left:2.5rem}
+.tl::before{content:'';position:absolute;left:0;top:.4rem;bottom:0;width:1px;background:var(--border)}
+.tl-item{padding-bottom:2.8rem;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-2.85rem;top:.45rem;width:9px;height:9px;border-radius:50%;border:2px solid var(--faint);background:var(--bg)}
+.tl-item:nth-child(1)::before{border-color:var(--lime);background:var(--lime);box-shadow:0 0 14px rgba(184,255,87,.5)}
+.tl-item:nth-child(2)::before{border-color:var(--purple)}
+.tl-item:nth-child(3)::before{border-color:var(--coral)}
+.tl-date{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;color:var(--faint);text-transform:uppercase;margin-bottom:.2rem}
+.tl-role{font-size:1.2rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.15rem}
+.tl-co{font-size:.9rem;color:var(--lime);font-weight:500;margin-bottom:.7rem}
+.tl-desc{color:var(--dim);font-size:.88rem;line-height:1.75;font-weight:300;max-width:620px;margin-bottom:.6rem}
+.tl-bullets{list-style:none;padding:0;margin:.4rem 0 .7rem}
+.tl-bullets li{position:relative;padding-left:1.1rem;color:var(--dim);font-size:.84rem;line-height:1.7;margin-bottom:.35rem;font-weight:300}
+.tl-bullets li::before{content:'›';position:absolute;left:0;color:var(--lime);font-weight:700}
+.tl-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tl-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.05em;padding:.25rem .6rem;border:1px solid rgba(184,255,87,.15);border-radius:4px;color:var(--lime);background:rgba(184,255,87,.03)}
+
+/* ═══ WORK CARDS ═══ */
+.wk-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.8rem}
+.wk{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:2.2rem;position:relative;overflow:hidden;transition:all .35s}
+.wk:hover{border-color:rgba(184,255,87,.25);transform:translateY(-3px)}
+.wk-glow{position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;opacity:.04;transition:opacity .35s}
+.wk:hover .wk-glow{opacity:.08}
+.wk:nth-child(1) .wk-glow{background:var(--lime)}
+.wk:nth-child(2) .wk-glow{background:var(--purple)}
+.wk:nth-child(3) .wk-glow{background:var(--coral)}
+.wk:nth-child(4) .wk-glow{background:var(--lime)}
+.wk-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--faint);margin-bottom:.8rem}
+.wk-title{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.wk-desc{font-size:.84rem;color:var(--dim);line-height:1.7;margin-bottom:1.2rem;font-weight:300}
+.wk-stack{display:flex;flex-wrap:wrap;gap:.35rem}
+.wk-stack span{font-family:var(--mono);font-size:.58rem;letter-spacing:.04em;padding:.22rem .55rem;border:1px solid var(--border);border-radius:3px;color:var(--faint)}
+
+/* ═══ EDUCATION ═══ */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.8rem}
+.edu{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.8rem;transition:border-color .3s}
+.edu:hover{border-color:var(--purple)}
+.edu-degree{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.edu-school{font-size:.82rem;color:var(--purple);font-weight:500;margin-bottom:.2rem}
+.edu-field{font-size:.75rem;color:var(--dim);font-weight:300}
+
+/* ═══ CONTACT ═══ */
+.contact-sec{text-align:center;padding:7rem 2.5rem}
+.contact-sec .stitle{font-size:clamp(2.2rem,4.5vw,3.5rem)}
+.contact-sub{color:var(--dim);font-size:1rem;max-width:480px;margin:.8rem auto 2.5rem;font-weight:300;line-height:1.7}
+
+.contact-email{display:inline-block;font-size:clamp(1.1rem,2.8vw,1.8rem);font-weight:700;color:var(--text);text-decoration:none;position:relative;margin-bottom:1.8rem;transition:color .3s}
+.contact-email::after{content:'';position:absolute;bottom:-.15rem;left:0;width:100%;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:right;transition:transform .4s}
+.contact-email:hover{color:var(--lime)}
+.contact-email:hover::after{transform:scaleX(1);transform-origin:left}
+
+.contact-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.cb{display:flex;align-items:center;gap:.5rem;padding:.6rem 1.3rem;border:1px solid var(--border);border-radius:100px;text-decoration:none;color:var(--dim);font-size:.8rem;transition:all .3s}
+.cb:hover{border-color:var(--lime);color:var(--lime);background:rgba(184,255,87,.03)}
+.cb svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.contact-phone{font-family:var(--mono);font-size:.78rem;color:var(--faint);letter-spacing:.04em}
+
+/* download resume button */
+.dl-btn{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;padding:.7rem 1.6rem;background:var(--lime);color:var(--bg);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;border-radius:100px;text-decoration:none;transition:all .3s}
+.dl-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(184,255,87,.3)}
+.dl-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* ═══ FOOTER ═══ */
+footer{border-top:1px solid var(--border);padding:1.8rem 2.5rem;display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:.65rem;color:var(--faint);letter-spacing:.06em}
+footer .foot-links{display:flex;gap:1.2rem}
+footer .foot-links a{color:var(--faint);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:color .3s}
+footer .foot-links a:hover{color:var(--lime)}
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  nav.scrolled{padding:.8rem 1.5rem}
+  .nav-links{display:none;position:fixed;inset:0;background:rgba(9,9,11,.97);backdrop-filter:blur(20px);flex-direction:column;justify-content:center;align-items:center;gap:2rem;z-index:100}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:1.1rem}
+  .burger{display:block}
+  .burger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+  section{padding:4rem 1.5rem}
+  .hero{padding:6.5rem 1.5rem 3rem}
+  .about-grid,.edu-grid,.wk-grid{grid-template-columns:1fr}
+  .skill-top{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  .contact-sec{padding:5rem 1.5rem}
+  footer{flex-direction:column;gap:.8rem;text-align:center}
+}
+@media(max-width:500px){
+  .hero h1{font-size:2.3rem}
+  .hero-metrics{flex-direction:column;gap:1.3rem}
+  .contact-row{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-mark">PREEZY</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
+    <a href="#education">Education</a>
+    <a href="#contact" class="cta">Let's Talk</a>
+  </div>
+  <button class="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="hero-glow g3"></div>
+
+  <div class="hero-eyebrow">Open to Opportunities</div>
+  <h1>
+    <span class="row">Digital</span>
+    <span class="row"><span class="pop">Jack of All</span></span>
+    <span class="row">Trades.</span>
+  </h1>
+  <p class="hero-blurb">Retail media strategist and ad ops professional who managed $2.5M+ in annual ad revenue. I learn the platform, optimize the campaigns, and move the numbers that matter.</p>
+
+  <div class="hero-metrics">
+    <div class="metric">
+      <strong>$2.5M+</strong>
+      <span>Annual Ad Revenue</span>
+    </div>
+    <div class="metric">
+      <strong>$3–5</strong>
+      <span>ROI Increase per Client</span>
+    </div>
+    <div class="metric">
+      <strong>$250K</strong>
+      <span>Max Portfolio Budget</span>
+    </div>
+    <div class="metric">
+      <strong>3.5 Yrs</strong>
+      <span>At Rithum</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <i></i>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="label">01 — About</div>
+    <div class="stitle rv">The Short Version</div>
+    <div class="about-grid">
+      <div class="about-prose rv">
+        <p>I'm <span class="wt">Priyank "Preezy" Patel</span> — a retail media account manager and ad ops professional who spent 3.5 years at <span class="lm">Rithum</span> (formerly ChannelAdvisor) managing client portfolios with annual budgets up to $250K and driving ad revenue goals north of $2.5M.</p>
+        <p>I increased ROI by <span class="wt">$3–5 for CPG clients</span> across cosmetics, beauty, cleaning, apparel, and more — using data analysis, keyword research, and SEO strategies to make every dollar work harder.</p>
+        <p>Before Rithum, I cut my teeth in project management and customer support, where I maintained <span class="wt">500+ SKUs across Amazon, Ace Hardware, and direct channels</span> — boosting sales volume 10–25% across multiple platforms. I'm the kind of person who learns every tool in the stack, asks "why" before "how," and ships results while everyone else is still planning.</p>
+      </div>
+      <div class="trait-card rv">
+        <h3>How I Operate</h3>
+        <div class="trait">
+          <div class="trait-dot"></div>
+          <p><strong>Creative minimalist.</strong> Clean thinking. No unnecessary complexity.</p>
+        </div>
+        <div class="trait">
+          <div class="trait-dot"></div>
+          <p><strong>Eager learner.</strong> I pick up platforms, tools, and workflows fast.</p>
+        </div>
+        <div class="trait">
+          <div class="trait-dot"></div>
+          <p><strong>Execution-first.</strong> Ideas are everywhere. Shipping is the differentiator.</p>
+        </div>
+        <div class="trait">
+          <div class="trait-dot"></div>
+          <p><strong>Data-driven.</strong> ROI, ACOS, CTR, CPC — every decision backed by numbers.</p>
+        </div>
+        <div class="trait">
+          <div class="trait-dot"></div>
+          <p><strong>Full-stack thinker.</strong> I see the whole picture, not just my lane.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="label">02 — Toolkit</div>
+    <div class="stitle rv">What I Bring</div>
+
+    <div class="skill-top rv">
+      <div class="sk">
+        <div class="sk-icon">📊</div>
+        <div class="sk-name">Retail Media</div>
+        <div class="sk-sub">Campaign Strategy</div>
+      </div>
+      <div class="sk">
+        <div class="sk-icon">🎯</div>
+        <div class="sk-name">Ad Operations</div>
+        <div class="sk-sub">Trafficking & QA</div>
+      </div>
+      <div class="sk">
+        <div class="sk-icon">🛒</div>
+        <div class="sk-name">E-Commerce</div>
+        <div class="sk-sub">Marketplace Mgmt</div>
+      </div>
+      <div class="sk">
+        <div class="sk-icon">📈</div>
+        <div class="sk-name">Analytics</div>
+        <div class="sk-sub">KPI & Performance</div>
+      </div>
+      <div class="sk">
+        <div class="sk-icon">💬</div>
+        <div class="sk-name">Client Mgmt</div>
+        <div class="sk-sub">8–12 Clients</div>
+      </div>
+      <div class="sk">
+        <div class="sk-icon">⚡</div>
+        <div class="sk-name">Budget Pacing</div>
+        <div class="sk-sub">$60K–$250K</div>
+      </div>
+    </div>
+
+    <div class="rv">
+      <div class="cat">
+        <div class="cat-label">Platforms & Channels</div>
+        <div class="tags">
+          <span class="tg ft">Amazon Ads</span>
+          <span class="tg ft">Walmart Connect</span>
+          <span class="tg ft">Roundel Ads (Target)</span>
+          <span class="tg">Google Ads (PPC)</span>
+          <span class="tg">Meta Ads</span>
+          <span class="tg">TikTok Ads</span>
+          <span class="tg">eBay Promoted Listings</span>
+          <span class="tg">Instacart Ads</span>
+          <span class="tg">Criteo Retail Media</span>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="cat-label">Tools & Analytics</div>
+        <div class="tags">
+          <span class="tg ft">Rithum / ChannelAdvisor</span>
+          <span class="tg ft">Google Analytics</span>
+          <span class="tg">Excel / Google Sheets</span>
+          <span class="tg">Jira</span>
+          <span class="tg">Looker Studio</span>
+          <span class="tg">EDI / CSV Processing</span>
+          <span class="tg">Campaign Manager</span>
+        </div>
+      </div>
+      <div class="cat">
+        <div class="cat-label">Core Competencies</div>
+        <div class="tags">
+          <span class="tg">ROI Optimization</span>
+          <span class="tg">ACOS Management</span>
+          <span class="tg">Keyword Research</span>
+          <span class="tg">SEO Strategy</span>
+          <span class="tg">A/B Testing</span>
+          <span class="tg">Bid Strategy</span>
+          <span class="tg">Product Listing Optimization</span>
+          <span class="tg">Budget Management</span>
+          <span class="tg">Cross-Functional Collaboration</span>
+          <span class="tg">Client Retention & Renewals</span>
+          <span class="tg">Performance Reporting</span>
+          <span class="tg">Creative Asset Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="label">03 — Experience</div>
+    <div class="stitle rv">Where I've Made Impact</div>
+
+    <div class="tl">
+      <div class="tl-item rv">
+        <div class="tl-date">September 2021 – February 2025</div>
+        <div class="tl-role">Retail Media Account Manager</div>
+        <div class="tl-co">Rithum (formerly ChannelAdvisor) — Morrisville, NC (Remote)</div>
+        <ul class="tl-bullets">
+          <li>Managed client portfolios with annual budgets of $60K–$250K, achieving performance goals across ROI, ACOS, CTR, and CPC — reaching annual ad revenue goals upwards of $2.5M</li>
+          <li>Increased ROI by $3–5 for CPG clients across cosmetics, beauty, cleaning, apparel, and other categories using data analysis, keyword research, and SEO strategies</li>
+          <li>Leveraged Retail Media technology to track, analyze, and report campaign performance using Google Analytics dashboards, providing insights based on key findings to clients</li>
+          <li>Connected with 8–12 clients on a bi-weekly or weekly basis to share progress on marketing plans and critical metrics</li>
+          <li>Adjusted creative assets for clients to meet technical specification requirements of platform campaigns</li>
+          <li>Collaborated with internal and external stakeholders to gauge client retention and renewals</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Retail Media</span>
+          <span class="tl-tag">Amazon Ads</span>
+          <span class="tl-tag">Walmart Connect</span>
+          <span class="tl-tag">Roundel</span>
+          <span class="tl-tag">Google Analytics</span>
+          <span class="tl-tag">PPC / SEO</span>
+        </div>
+      </div>
+
+      <div class="tl-item rv">
+        <div class="tl-date">February 2020 – May 2021</div>
+        <div class="tl-role">Project Administrator</div>
+        <div class="tl-co">SMT Inc. — Durham, NC (Hybrid)</div>
+        <ul class="tl-bullets">
+          <li>Managed 20–40 weekly Jira tickets across a 10-person development team</li>
+          <li>Collaborated with developers, engineers, and QA to execute project deliverables for executive review</li>
+          <li>Updated dashboards to visualize project progress and risk with data-driven insights</li>
+          <li>Facilitated sprint planning, backlog refinement, and roadmap alignment in Jira</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Jira</span>
+          <span class="tl-tag">Project Management</span>
+          <span class="tl-tag">Agile</span>
+          <span class="tl-tag">Stakeholder Mgmt</span>
+        </div>
+      </div>
+
+      <div class="tl-item rv">
+        <div class="tl-date">May 2017 – February 2020</div>
+        <div class="tl-role">Customer Support Specialist</div>
+        <div class="tl-co">Rutland Products — Chapel Hill, NC (Hybrid)</div>
+        <ul class="tl-bullets">
+          <li>Processed 25–150 daily customer inquiries across email, phone, and social media</li>
+          <li>Processed purchase orders up to $100K using EDI and CSV formats</li>
+          <li>Maintained and optimized 500+ SKUs and product listings for Amazon, Ace Hardware, and company websites — enhancing sales volume 10–25% across multiple platforms</li>
+          <li>Appealed 10–20 chargebacks daily with Amazon, Ace Hardware, Tractor Supply, and additional partners for revenue protection</li>
+        </ul>
+        <div class="tl-tags">
+          <span class="tl-tag">Amazon</span>
+          <span class="tl-tag">E-Commerce</span>
+          <span class="tl-tag">SKU Management</span>
+          <span class="tl-tag">EDI</span>
+          <span class="tl-tag">Revenue Protection</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="label">04 — Featured Work</div>
+    <div class="stitle rv">What I've Delivered</div>
+
+    <div class="wk-grid">
+      <div class="wk rv">
+        <div class="wk-glow"></div>
+        <div class="wk-num">01</div>
+        <div class="wk-title">$2.5M+ Retail Media Portfolio</div>
+        <div class="wk-desc">Full ownership of multi-brand retail media campaigns across Amazon Ads, Walmart Connect, and Roundel — managing $60K–$250K client budgets and consistently hitting annual revenue targets exceeding $2.5M.</div>
+        <div class="wk-stack">
+          <span>Amazon Ads</span>
+          <span>Walmart Connect</span>
+          <span>Roundel</span>
+          <span>ROAS</span>
+        </div>
+      </div>
+
+      <div class="wk rv">
+        <div class="wk-glow"></div>
+        <div class="wk-num">02</div>
+        <div class="wk-title">$3–5 ROI Lift for CPG Brands</div>
+        <div class="wk-desc">Drove measurable ROI increases of $3–5 per client across cosmetics, beauty, cleaning, and apparel categories through keyword research, SEO optimization, and data-driven campaign adjustments.</div>
+        <div class="wk-stack">
+          <span>Data Analysis</span>
+          <span>Keyword Research</span>
+          <span>SEO</span>
+          <span>CPG</span>
+        </div>
+      </div>
+
+      <div class="wk rv">
+        <div class="wk-glow"></div>
+        <div class="wk-num">03</div>
+        <div class="wk-title">500+ SKU Optimization Engine</div>
+        <div class="wk-desc">Maintained and optimized 500+ product listings across Amazon, Ace Hardware, and direct channels — driving a 10–25% sales volume increase through better content, positioning, and chargeback management.</div>
+        <div class="wk-stack">
+          <span>Product Listings</span>
+          <span>Amazon</span>
+          <span>Ace Hardware</span>
+          <span>Revenue Protection</span>
+        </div>
+      </div>
+
+      <div class="wk rv">
+        <div class="wk-glow"></div>
+        <div class="wk-num">04</div>
+        <div class="wk-title">Agile Project Operations</div>
+        <div class="wk-desc">Managed 20–40 Jira tickets weekly for a 10-person dev team — facilitating sprint planning, backlog refinement, and stakeholder reporting to keep complex projects on track and transparent.</div>
+        <div class="wk-stack">
+          <span>Jira</span>
+          <span>Agile</span>
+          <span>Dashboards</span>
+          <span>Stakeholders</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <div class="label">05 — Education</div>
+    <div class="stitle rv">Background</div>
+    <div class="edu-grid rv">
+      <div class="edu">
+        <div class="edu-degree">Master of Science</div>
+        <div class="edu-school">East Carolina University</div>
+        <div class="edu-field">Information and Cybersecurity Technology</div>
+      </div>
+      <div class="edu">
+        <div class="edu-degree">Bachelor of Arts</div>
+        <div class="edu-school">UNC – Chapel Hill</div>
+        <div class="edu-field">Communications & Asian Studies</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-sec">
+  <div class="wrap">
+    <div class="label">06 — Contact</div>
+    <div class="stitle rv">Let's Work Together</div>
+    <p class="contact-sub rv">Looking for my next opportunity in advertising operations or retail media management. If you need someone who learns fast and executes faster — let's talk.</p>
+
+    <a href="mailto:priyankp@icloud.com" class="contact-email rv">priyankp@icloud.com</a>
+
+    <div class="contact-row rv">
+      <a href="https://linkedin.com/in/ppatel910" target="_blank" rel="noopener" class="cb">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:priyankp@icloud.com" class="cb">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+      <a href="tel:+19109958015" class="cb">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (910) 995-8015
+      </a>
+    </div>
+
+    <a href="#" class="dl-btn rv" id="resumeBtn">
+      <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Resume
+    </a>
+    <br><br>
+    <div class="contact-phone rv">(910) 995-8015 · Winston-Salem, NC</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Priyank "Preezy" Patel. Built with purpose.</p>
+  <div class="foot-links">
+    <a href="https://linkedin.com/in/ppatel910" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:priyankp@icloud.com">Email</a>
+    <a href="#top">Top ↑</a>
+  </div>
+</footer>
+
+<script>
+// NAV SCROLL
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// MOBILE MENU
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
+
+// SCROLL REVEAL
+const revealEls = document.querySelectorAll('.rv, .tl-item');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('vis', 'visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// SMOOTH ANCHOR SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// RESUME DOWNLOAD PLACEHOLDER
+document.getElementById('resumeBtn').addEventListener('click', (e) => {
+  e.preventDefault();
+  alert('Resume download will be configured once the PDF is hosted. Replace this link with the URL to your resume file.');
+});
+</script>
+</body>
+</html>
